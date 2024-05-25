@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+img{
+    width: 150px;
+    margin: 0 20px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+img:not(:hover){
+    filter: grayscale(100%);
+}
+
+.scroll{
+    position: relative;
+    display: flex;
+    width: 1200px;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+}
+
+.scroll div{
+    white-space: nowrap;
+    animation: animate 30s linear infinite;
+}
+
+
+@keyframes animate {
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+.scroll:hover div{
+    animation-play-state: paused;
+}
